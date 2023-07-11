@@ -16,7 +16,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_SECRET }}
 
       - name: Build the Docker image
-        run: docker build --tag ${{ secrets.DOCKER_USER }}/${{ secrets.DOCKER_IMAGE_NAME }}:${{ github.sha }} ./dockerized-app/client
+        run: docker build --tag ${{ secrets.DOCKER_USER }}/${{ secrets.DOCKER_IMAGE_NAME }}:${{ github.sha }} ./client
 
       - name: Set image id from the last build
         id: vars
